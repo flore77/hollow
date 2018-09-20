@@ -5,11 +5,11 @@ import java.util.concurrent.TimeUnit;
 public class HollowProducerFakeListener  implements HollowProducerListener {
 
     public ProducerStatus getSuccessFakeStatus(long version) {
-        return HollowProducerFakeListener.ProducerStatus.success(version);
+        return new ProducerStatus(Status.SUCCESS, version, null, null);
     }
 
     public ProducerStatus getFailFakeStatus(long version) {
-        return HollowProducerFakeListener.ProducerStatus.fail(version);
+        return new ProducerStatus(Status.FAIL, version, null, null);
     }
 
     @Override
